@@ -63,7 +63,39 @@ console.log(getVowelSubString("hmmm"));
 
 
 
+function getConstSubString(string) {
+    const vowels = ['a', 'e', 'i', 'o', 'u'];
+    let list = [];
+    let arr = [];
+    if (string == vowels) {
+        return [];
+    }
+    for (let i = 0; i < string.length; i++) {
+        //console.log(string)
+        if (!vowels.includes(string[i])) {
+            list.push(i);
+            console.log(i)
+        }
+    }
+    for (let i = 0; i < list.length; i++) {
 
+        if (!(arr.includes(string[list[i]]))) {
+            arr.push(string[list[i]]);
+            console.log(arr)
+        }
+        for (let j = i + 1; j < list.length; j++) {
+            if (!arr.includes(string.substring(list[i], list[j] + 1))) {
+                arr.push(string.substring(list[i], list[j]+ 1))
+            }
+        }
+
+    }
+    return arr.sort();
+    
+}
+
+console.log(getConstSubString("apple"));
+console.log(getConstSubString("hmmm"));
 /**
  2) Write a function redundant that takes in a string 'str' and returns a function that returns 'str'.
 
