@@ -67,7 +67,7 @@ function getConstSubString(string) {
     const vowels = ['a', 'e', 'i', 'o', 'u'];
     let list = [];
     let arr = [];
-    if (string == vowels) {
+    if (string.includes(vowels)) {
         return [];
     }
     for (let i = 0; i < string.length; i++) {
@@ -79,7 +79,7 @@ function getConstSubString(string) {
     }
     for (let i = 0; i < list.length; i++) {
 
-        if (!(arr.includes(string[list[i]]))) {
+        if ((arr.includes(string[list[i]]))) {
             arr.push(string[list[i]]);
             console.log(arr)
         }
